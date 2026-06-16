@@ -2,9 +2,6 @@
 
 **Cliente:** EFA Construção LTDA
 
-_Responsável:_
-Antônio Domingos Miguel
-
 **Objetivo**
 Desenvolver um website institucional para fortalecer a presença digital da empresa, apresentar serviços e obras realizadas e facilitar o contato com potenciais clientes.
 
