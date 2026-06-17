@@ -1,0 +1,347 @@
+/* ════════════════════════════════════════
+   About — mobile first
+   600px  → tablet
+   960px  → desktop
+   ════════════════════════════════════════ */
+
+/* ══════════════════════════
+   [SEÇÃO] About
+   ══════════════════════════ */
+.about {
+  background-color: #ede6d6;
+  background-image:
+    radial-gradient(
+      ellipse at 15% 20%,
+      rgba(210, 185, 140, 0.5) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 85% 75%,
+      rgba(190, 165, 115, 0.45) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 50% 50%,
+      rgba(230, 215, 180, 0.3) 0%,
+      transparent 70%
+    );
+  padding: 48px 16px;
+  font-family: var(--font-title), serif;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+/* ══════════════════════════
+   [HEADER] Eyebrow + Título
+   ══════════════════════════ */
+.about-header {
+  text-align: center;
+  padding: 0 8px 8px;
+}
+
+.about-eyebrow {
+  font-family: var(--font-body), sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #9c8a6e;
+  margin: 0 0 10px;
+}
+
+.about-section-title {
+  font-size: clamp(22px, 5vw, 36px);
+  font-weight: 400;
+  color: #2c2416;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* ══════════════════════════
+   [CARD BASE] Glass
+   — herdado por todos os cards
+   ══════════════════════════ */
+.about-card {
+  background: rgba(255, 251, 244, 0.45);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border: 0.5px solid rgba(255, 248, 235, 0.75);
+  border-bottom-color: rgba(180, 160, 120, 0.3);
+  border-right-color: rgba(180, 160, 120, 0.3);
+  border-radius: 14px;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; /* mobile: empilha */
+  gap: 20px;
+  box-shadow:
+    0 2px 8px rgba(100, 80, 40, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* ══════════════════════════
+   [CARD 1] Empresa
+   ├── EnterpriseText
+   │     ├── card-title
+   │     ├── card-description
+   │     └── Stats
+   └── EnterpriseImage
+   ══════════════════════════ */
+
+/* EnterpriseText */
+.enterprise-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card-title {
+  font-size: clamp(16px, 3vw, 20px);
+  font-weight: 400;
+  color: #2c2416;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.card-description {
+  font-family: var(--font-body), sans-serif;
+  font-size: 14px;
+  line-height: 1.85;
+  color: #5a4f3e;
+  margin: 0;
+  text-align: justify;
+}
+
+/* Stats */
+.about-stats {
+  display: flex;
+  gap: 20px;
+  padding-top: 14px;
+  border-top: 0.5px solid rgba(180, 160, 120, 0.35);
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.stat-valor {
+  font-size: clamp(22px, 4vw, 28px);
+  font-weight: 400;
+  color: #2c2416;
+  line-height: 1;
+}
+
+.stat-label {
+  font-family: var(--font-body), sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #9c8a6e;
+}
+
+/* EnterpriseImage */
+.enterprise-image-wrapper {
+  width: 100%; /* mobile: ocupa tudo */
+  border-radius: 10px;
+  overflow: hidden;
+  border: 0.5px solid rgba(180, 160, 120, 0.3);
+  flex-shrink: 0;
+}
+
+.enterprise-image {
+  width: 100%;
+  height: 220px; /* mobile */
+  object-fit: cover;
+  display: block;
+}
+
+/* ══════════════════════════
+   [CARD 2 e 3] Membro
+   ├── MemberPhoto
+   └── MemberInfo
+         ├── member-business
+         ├── member-name
+         └── member-bio
+   ══════════════════════════ */
+
+/* MemberPhoto */
+.member-photo {
+  width: 100%; /* mobile: ocupa tudo */
+  height: 200px;
+  border-radius: 10px;
+  background: rgba(232, 223, 208, 0.6);
+  border: 0.5px solid rgba(180, 160, 120, 0.3);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.member-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.member-initials {
+  font-family: var(--font-body), sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #9c8a6e;
+  letter-spacing: 0.06em;
+}
+
+/* MemberInfo */
+.member-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.member-business {
+  font-family: var(--font-body), sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: #9c8a6e;
+  margin: 0 0 5px;
+}
+
+.member-name {
+  font-family: var(--font-body), sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #2c2416;
+  margin: 0 0 14px;
+  letter-spacing: 0.05em;
+  line-height: 1.3;
+}
+
+.member-bio {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bio-paragraph {
+  font-family: var(--font-body), sans-serif;
+  font-size: 13px;
+  color: #5a4f3e;
+  line-height: 1.8;
+  margin: 0;
+  text-align: justify;
+}
+
+/* ══════════════════════════
+   TABLET → 600px
+   ══════════════════════════ */
+@media (min-width: 600px) {
+  /* [SEÇÃO] */
+  .about {
+    padding: 60px 32px;
+    gap: 20px;
+  }
+
+  /* [CARD BASE] */
+  .about-card {
+    padding: 28px;
+  }
+
+  /* [CARD 1] imagem maior, ainda abaixo */
+  .enterprise-image {
+    height: 300px;
+  }
+
+  /* [CARD 2 e 3] foto ao lado da bio */
+  .member-card {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .member-photo {
+    width: 140px;
+    height: 180px;
+  }
+}
+
+/* ══════════════════════════
+   DESKTOP → 960px
+   ══════════════════════════ */
+@media (min-width: 960px) {
+  /* [SEÇÃO] */
+  .about {
+    padding: 80px 24px;
+    max-width: 960px;
+    margin: 0 auto;
+    gap: 24px;
+  }
+
+  /* [CARD BASE] */
+  .about-card {
+    padding: 36px;
+  }
+
+  /* [CARD 1] texto à esquerda | imagem à direita */
+  .enterprise-card {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 36px;
+  }
+
+  .enterprise-image-wrapper {
+    width: 380px;
+    align-self: stretch;
+  }
+
+  .enterprise-image {
+    height: 100%;
+  }
+
+  /* [CARD 2 e 3] foto maior */
+  .member-photo {
+    width: 160px;
+    height: 200px;
+  }
+}
+
+/* ══════════════════════════
+   [BIO] Colunas estilo jornal
+   ══════════════════════════ */
+.bio-columns {
+  display: flex;
+  flex-direction: column; /* mobile: empilha */
+  gap: 10px;
+}
+
+.bio-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bio-paragraph {
+  font-family: var(--font-body), sans-serif;
+  font-size: 13px;
+  color: #5a4f3e;
+  line-height: 1.8;
+  margin: 0;
+  text-align: justify;
+}
+
+/* tablet+: duas colunas lado a lado */
+@media (min-width: 600px) {
+  .bio-columns {
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .bio-col {
+    flex: 1;
+    min-width: 0;
+  }
+}

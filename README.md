@@ -1,231 +1,36 @@
-# Projeto: Website Institucional EFA Construção LTDA
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-**Cliente:** EFA Construção LTDA
+## Getting Started
 
-_Responsável:_
-Antônio Domingos Miguel
+First, run the development server:
 
-**Objetivo**
-Desenvolver um website institucional para fortalecer a presença digital da empresa, apresentar serviços e obras realizadas e facilitar o contato com potenciais clientes.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## Necessidades do Cliente
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- Aumentar a credibilidade da empresa.
-- Exibir serviços prestados.
-- Exibir obras realizadas.
-- Facilitar o contato com clientes.
-- Possibilitar solicitação de orçamento.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-# Escopo
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Incluído
+## Learn More
 
-- Website institucional responsivo.
-- Página Home.
-- Página Sobre a Empresa.
-- Página Nossa História.
-- Página Serviços.
-- Página Obras Realizadas.
-- Página Equipe.
-- Página Contato.
-- Integração com WhatsApp.
-- Formulário para solicitação de orçamento.
+To learn more about Next.js, take a look at the following resources:
 
-## Não Incluído
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-- Aplicativo mobile.
-- Sistema financeiro.
-- Controle de obras.
-- Controle de estoque.
-- Sistema de gestão de funcionários.
-- Área restrita para clientes.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-# Requisitos Funcionais
+## Deploy on Vercel
 
-RF01 - Exibir informações sobre a empresa.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-RF02 - Exibir a história da empresa e do fundador.
-
-RF03 - Exibir os serviços prestados.
-
-RF04 - Exibir portfólio de obras realizadas.
-
-RF05 - Exibir informações da equipe.
-
-RF06 - Permitir contato via WhatsApp.
-
-RF07 - Permitir envio de formulário de contato.
-
-RF08 - Permitir solicitação de orçamento.
-
-# Estrutura do Site
-
-## Home
-
-Objetivo:
-Apresentar a empresa rapidamente e direcionar o usuário para contato.
-
-Seções:
-
-- Banner principal
-- Chamada para orçamento
-- Resumo da empresa
-- Destaques dos serviços
-- Destaques das obras
-- Botão WhatsApp
-
-## Sobre a Empresa
-
-Conteúdo:
-
-- História resumida
-- Experiência
-- Diferenciais
-
-## Nossa História
-
-Conteúdo:
-
-- Trajetória de Antônio Domingos Miguel
-- Fundação da empresa
-- Experiência acumulada
-
-## Serviços
-
-Conteúdo:
-
-- Alvenaria
-- Acabamentos
-- Carpintaria
-- Reformas
-- Pedra Miracema
-- Suporte à obra
-
-## Obras Realizadas
-
-Conteúdo:
-
-- Fazenda Boa Vista
-- Campo Verde
-- Ibi House
-- Praça Villa-Lobos
-
-Dados necessários:
-
-- Nome da obra
-- Descrição
-- Fotos
-
-## Equipe
-
-### Antônio Domingos Miguel
-
-Fundador
-
-### Raquel Ferreira
-
-Gerente Administrativa
-
-## Contato
-
-Campos:
-
-- Nome
-- Telefone
-- E-mail
-- Mensagem
-
-Botões:
-
-- Enviar
-- WhatsApp
-
-# Requisitos Não Funcionais
-
-RNF01 - Layout responsivo.
-
-RNF02 - Compatível com dispositivos móveis.
-
-RNF03 - Compatível com Chrome, Edge e Firefox.
-
-RNF04 - HTTPS habilitado.
-
-RNF05 - Tempo de carregamento inferior a 3 segundos.
-
-# Arquitetura
-
-Frontend:
-
-- Next.js
-- TypeScript
-- Tailwind CSS
-
-Deploy:
-
-- Vercel
-
-Integrações:
-
-- WhatsApp
-- EmailJS
-
-Hospedagem:
-
-- Vercel
-
-# Componentes
-
-Navbar
-
-Footer
-
-Hero
-
-Card de Serviço
-
-Card de Obra
-
-Formulário de Contato
-
-Botão WhatsApp
-
-# Assets Necessários
-
-- Logo da empresa
-- Fotos das obras
-- Foto do fundador
-- Foto da gerente administrativa
-- Dados de contato
-- CNPJ
-
-# Critérios de Aceitação
-
-CA01 - Usuário consegue visualizar os serviços.
-
-CA02 - Usuário consegue visualizar as obras.
-
-CA03 - WhatsApp abre corretamente.
-
-CA04 - Formulário envia corretamente.
-
-CA05 - Site funciona em celular.
-
-# Histórias de Usuário
-
-US01
-
-Como visitante,
-quero visualizar os serviços da empresa,
-para entender se ela atende minha necessidade.
-
-US02
-
-Como visitante,
-quero visualizar obras realizadas,
-para avaliar a experiência da empresa.
-
-US03
-
-Como visitante,
-quero entrar em contato rapidamente,
-para solicitar um orçamento.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
