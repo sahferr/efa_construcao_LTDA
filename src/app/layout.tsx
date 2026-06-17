@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { DM_Serif_Display, Montserrat } from "next/font/google";
+import { Nunito_Sans, Outfit } from "next/font/google";
 import "./globals.css";
 
-const dmSerifDisplay = DM_Serif_Display({
+const outfit = Outfit({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["300", "400", "500"],
   variable: "--font-title",
 });
 
-const montserrat = Montserrat({
+const nunitoSans = Nunito_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
   variable: "--font-body",
@@ -25,10 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="pt-BR"
-      className={`${dmSerifDisplay.variable} ${montserrat.variable}`}
-    >
+    <html lang="pt-BR" className={`${outfit.variable} ${nunitoSans.variable}`}>
       <body>{children}</body>
     </html>
   );

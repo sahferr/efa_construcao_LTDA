@@ -2,6 +2,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+<<<<<<< HEAD
 First, run the development server:
 
 ```bash
@@ -13,6 +14,10 @@ pnpm dev
 # or
 bun dev
 ```
+=======
+**Objetivo**
+Desenvolver um website institucional para fortalecer a presença digital da empresa, apresentar serviços e obras realizadas e facilitar o contato com potenciais clientes.
+>>>>>>> ed176ef3a0d403ea75e95386c22c660da1c770b7
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

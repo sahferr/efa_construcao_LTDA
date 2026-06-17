@@ -1,0 +1,88 @@
+.portfolio {
+  padding: 80px 24px;
+  box-sizing: border-box;
+}
+
+.portfolio-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.portfolio-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #9c8a6e;
+  margin: 0 0 12px;
+}
+
+.portfolio-title {
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 300;
+  color: #2c2416;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.portfolio-card {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 0.5px solid rgba(180, 160, 120, 0.3);
+}
+
+.portfolio-img-placeholder {
+  width: 100%;
+  height: 200px;
+  background: rgba(180, 160, 120, 0.2);
+}
+
+.portfolio-info {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.portfolio-type {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #9c8a6e;
+}
+
+.portfolio-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #2c2416;
+  margin: 0;
+}
+
+.portfolio-year {
+  font-size: 12px;
+  color: #9c8a6e;
+}
+
+@media (min-width: 600px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .portfolio {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

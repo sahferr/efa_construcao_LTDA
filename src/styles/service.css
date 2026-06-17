@@ -1,0 +1,73 @@
+.services {
+  padding: 80px 24px;
+  box-sizing: border-box;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.services-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #9c8a6e;
+  margin: 0 0 12px;
+}
+
+.services-title {
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 300;
+  color: #2c2416;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.service-card {
+  padding: 28px;
+  border: 0.5px solid rgba(180, 160, 120, 0.3);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.service-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #2c2416;
+  margin: 0 0 10px;
+  letter-spacing: 0.02em;
+}
+
+.service-desc {
+  font-size: 13px;
+  color: #5a4f3e;
+  line-height: 1.75;
+  margin: 0;
+}
+
+@media (min-width: 600px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .services {
+    padding: 80px 24px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
