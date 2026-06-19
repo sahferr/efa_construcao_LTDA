@@ -1,0 +1,38 @@
+.bg-cover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.overlay-left {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(44, 36, 22, 0.88) 0%,
+    rgba(44, 36, 22, 0.4) 55%,
+    transparent 100%
+  );
+}
+
+.overlay-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    #ede6d6 0%,
+    #ede6d6 35%,
+    rgba(237, 230, 214, 0.7) 55%,
+    transparent 100%
+  );
+}
+
+.relative {
+  position: relative;
+  overflow: hidden;
+}
+
+.z-content {
+  position: relative;
+  z-index: 2;
+}

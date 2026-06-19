@@ -6,6 +6,84 @@
   padding: 0;
 }
 
+:root {
+  --color-hero: #1f1a12;
+  --color-paper: #ede6d6;
+  --color-ink: #2c2416;
+  --color-muted: #5a4f3e;
+  --color-gold: #b8915f;
+  --color-gold-soft: rgba(184, 145, 95, 0.34);
+  --color-blue: #253b46;
+  --color-blue-soft: rgba(37, 59, 70, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-paper);
+  scrollbar-color: var(--color-gold) transparent;
+  scrollbar-width: thin;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body), Arial, sans-serif;
+  line-height: 1.5;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-title), Georgia, serif;
+  font-feature-settings: "liga" 1;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-button {
+  appearance: none;
+  background: transparent;
+  border: none;
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-button:single-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  min-height: 96px;
+  background: var(--color-gold);
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c7a16d;
+}
+
 .container-start {
   width: 100%;
   margin: 0 auto;

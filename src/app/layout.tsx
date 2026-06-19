@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { Nunito_Sans, Outfit } from "next/font/google";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["400", "500", "600"],
   variable: "--font-title",
 });
 
-const nunitoSans = Nunito_Sans({
+const manrope = Manrope({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-body",
 });
 
@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" className={`${outfit.variable} ${nunitoSans.variable}`}>
+    <html lang="pt-BR" className={`${cormorant.variable} ${manrope.variable}`}>
       <body>{children}</body>
     </html>
   );

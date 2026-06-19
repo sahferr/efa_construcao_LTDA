@@ -1,24 +1,52 @@
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 680px;
+  height: 100svh;
   display: flex;
   align-items: center;
-  background-color: #2c2416;
-  background-size: cover;
-  background-position: center;
+  background-color: #1f1a12;
   overflow: hidden;
   padding-top: 64px;
+}
+
+.hero-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-slide-frame {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: heroFade 12s infinite;
+}
+
+.hero-slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-slide-frame:nth-child(2) {
+  animation-delay: 3s;
+}
+
+.hero-slide-frame:nth-child(3) {
+  animation-delay: 6s;
+}
+
+.hero-slide-frame:nth-child(4) {
+  animation-delay: 9s;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(44, 36, 22, 0.85) 0%,
-    rgba(44, 36, 22, 0.5) 60%,
-    transparent 100%
-  );
+  background:
+    linear-gradient(90deg, rgba(31, 26, 18, 0.74) 0%, rgba(31, 26, 18, 0.42) 46%, rgba(31, 26, 18, 0.08) 100%),
+    linear-gradient(180deg, rgba(31, 26, 18, 0.12) 0%, rgba(31, 26, 18, 0.42) 100%);
   z-index: 1;
 }
 
@@ -33,17 +61,17 @@
   font-size: 11px;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: rgba(237, 230, 214, 0.7);
+  color: rgba(211, 176, 121, 0.88);
   margin: 0 0 20px;
 }
 
 .hero-title {
-  font-size: clamp(36px, 7vw, 72px);
-  font-weight: 300;
+  font-size: clamp(44px, 7vw, 88px);
+  font-weight: 500;
   color: #ede6d6;
-  line-height: 1.1;
+  line-height: 0.98;
   margin: 0 0 20px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 
 .hero-subtitle {
@@ -63,16 +91,20 @@
 .hero-btn-primary {
   font-size: 13px;
   letter-spacing: 0.08em;
-  color: #2c2416;
-  background: #ede6d6;
+  color: #1f1a12;
+  background: linear-gradient(135deg, #d6b47c 0%, var(--color-gold) 100%);
   text-decoration: none;
   padding: 14px 28px;
   border-radius: 4px;
-  transition: opacity 0.15s;
+  box-shadow: 0 14px 32px rgba(184, 145, 95, 0.22);
+  transition:
+    opacity 0.15s,
+    transform 0.15s;
 }
 
 .hero-btn-primary:hover {
   opacity: 0.88;
+  transform: translateY(-1px);
 }
 
 .hero-btn-secondary {
@@ -82,16 +114,120 @@
   text-decoration: none;
   padding: 14px 28px;
   border-radius: 4px;
-  border: 0.5px solid rgba(237, 230, 214, 0.4);
-  transition: border-color 0.15s;
+  border: 0.5px solid rgba(184, 145, 95, 0.55);
+  background: rgba(37, 59, 70, 0.22);
+  transition:
+    background 0.15s,
+    border-color 0.15s;
 }
 
 .hero-btn-secondary:hover {
-  border-color: rgba(237, 230, 214, 0.8);
+  background: rgba(37, 59, 70, 0.4);
+  border-color: rgba(214, 180, 124, 0.86);
 }
 
 @media (min-width: 768px) {
+  .hero {
+    min-height: 760px;
+  }
+
   .hero-content {
     padding: 80px 64px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero {
+    min-height: 820px;
+  }
+
+  .hero-slideshow {
+    inset: 0 0 0 auto;
+    width: min(62vw, 980px);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 84px 56px 56px 0;
+    background:
+      linear-gradient(90deg, rgba(31, 26, 18, 0) 0%, rgba(31, 26, 18, 0.18) 100%);
+  }
+
+  .hero-slide-frame {
+    position: relative;
+    inset: auto;
+    overflow: hidden;
+    opacity: 1;
+    animation: none;
+    border-radius: 6px;
+    border: 1px solid rgba(184, 145, 95, 0.16);
+  }
+
+  .hero-slide {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(90deg, #1f1a12 0%, rgba(31, 26, 18, 0.94) 26%, rgba(31, 26, 18, 0.64) 43%, rgba(31, 26, 18, 0.16) 62%, rgba(31, 26, 18, 0) 100%),
+      linear-gradient(180deg, rgba(31, 26, 18, 0.1) 0%, rgba(31, 26, 18, 0.28) 100%);
+  }
+
+  .hero-content {
+    padding-left: 96px;
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    min-height: 620px;
+    align-items: flex-end;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(180deg, rgba(31, 26, 18, 0.08) 0%, rgba(31, 26, 18, 0.54) 42%, rgba(31, 26, 18, 0.92) 100%);
+  }
+
+  .hero-slide {
+    object-position: center top;
+  }
+
+  .hero-content {
+    padding: 40px 20px 56px;
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
+    max-width: 340px;
+  }
+
+  .hero-actions {
+    width: 100%;
+  }
+
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    flex: 1 1 150px;
+    text-align: center;
+    padding: 13px 18px;
+  }
+}
+
+@keyframes heroFade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  8%,
+  25% {
+    opacity: 1;
+  }
+
+  33% {
+    opacity: 0;
   }
 }

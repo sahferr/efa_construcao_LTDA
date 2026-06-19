@@ -35,11 +35,11 @@ export default function Navbar() {
       </ul>
 
       <button
-        className="navbar-burger"
+        className={`navbar-burger${open ? " is-open" : ""}`}
         onClick={() => setOpen(!open)}
-        aria-label="Menu"
+        aria-label={open ? "Fechar menu" : "Abrir menu"}
+        aria-expanded={open}
       >
-        <span />
         <span />
         <span />
       </button>
