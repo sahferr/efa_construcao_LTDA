@@ -16,7 +16,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <a href="#hero" className="navbar-logo">
-        EFA Construção
+        EFA Construção refazer com logo
       </a>
 
       <ul className="navbar-links">
