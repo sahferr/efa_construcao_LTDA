@@ -2,12 +2,16 @@
 import { useState } from "react";
 import { formatName } from "../function/formatName";
 import { formatPhone } from "../function/formatPhone";
+import { handleSubmit } from "../function/message";
+
 import "../styles/contact.css";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
   const [phone, setPhone] = useState("");
   const [name, setName] = useState("");
+  const [service, setService] = useState("");
+  const [message, setMessage] = useState("");
 
   return (
     <section className="contact" id="contact">
@@ -80,7 +84,13 @@ export default function Contact() {
                 placeholder="Descreva seu projeto..."
               />
             </div>
-            <button className="form-submit" onClick={() => setSent(true)}>
+            <button
+              className="form-submit"
+              onClick={() => {
+                setSent(true);
+                handleSubmit({ name, phone, service, message });
+              }}
+            >
               Enviar Solicitação
             </button>
           </div>
