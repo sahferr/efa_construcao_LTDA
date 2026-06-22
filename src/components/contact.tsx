@@ -1,9 +1,13 @@
 "use client";
 import { useState } from "react";
+import { formatName } from "../function/formatName";
+import { formatPhone } from "../function/formatPhone";
 import "../styles/contact.css";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const [phone, setPhone] = useState("");
+  const [name, setName] = useState("");
 
   return (
     <section className="contact" id="contact">
@@ -19,18 +23,16 @@ export default function Contact() {
             proposta personalizada para o seu projeto.
           </p>
           <div className="contact-channels">
-            <a href="https://wa.me/5511999999999" className="contact-channel">
+            <a href="https://wa.me/5511965787716" className="contact-channel">
               <span className="contact-channel-label">WhatsApp</span>
-              <span className="contact-channel-value">(11) 99999-9999</span>
+              <span className="contact-channel-value">(11) 96578-7716</span>
             </a>
             <a
-              href="mailto:contato@efaconstrucao.com.br"
+              href="mailto:raquel.efaconstrucao@gmail.com"
               className="contact-channel"
             >
               <span className="contact-channel-label">E-mail</span>
-              <span className="contact-channel-value">
-                contato@efaconstrucao.com.br
-              </span>
+              <span className="contact-channel-value">Raquel Ferreira</span>
             </a>
           </div>
         </div>
@@ -44,6 +46,8 @@ export default function Contact() {
                   className="form-input"
                   type="text"
                   placeholder="Seu nome completo"
+                  value={name}
+                  onChange={(e) => setName(formatName(e.target.value))}
                 />
               </div>
               <div className="form-group">
@@ -52,6 +56,8 @@ export default function Contact() {
                   className="form-input"
                   type="tel"
                   placeholder="(11) 99999-9999"
+                  value={phone}
+                  onChange={(e) => setPhone(formatPhone(e.target.value))}
                 />
               </div>
             </div>

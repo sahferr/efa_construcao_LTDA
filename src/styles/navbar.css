@@ -18,14 +18,12 @@
 }
 
 .navbar-logo {
-  font-size: 15px;
-  font-weight: 600;
-  color: #2c2416;
-  text-decoration: none;
-  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
 }
 
-.navbar-logo::after {
+/* .navbar-logo::after {
   content: "";
   display: inline-block;
   width: 6px;
@@ -34,7 +32,7 @@
   border-radius: 999px;
   background: var(--color-gold);
   vertical-align: middle;
-}
+} */
 
 .navbar-links {
   display: none;
@@ -148,6 +146,15 @@
   letter-spacing: 0.04em;
 }
 
+@media (max-width: 768px) {
+  .navbar-logo img {
+    width: 90px;
+    height: auto;
+
+    object-fit: contain;
+  }
+}
+
 @media (min-width: 768px) {
   .navbar-links {
     display: flex;
@@ -155,5 +162,11 @@
 
   .navbar-burger {
     display: none;
+  }
+
+  .navbar-logo img {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
   }
 }

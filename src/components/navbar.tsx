@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import logomobile from "../assets/logo-rmbg.png";
 import "../styles/navbar.css";
 
 const links = [
@@ -16,7 +17,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <a href="#hero" className="navbar-logo">
-        EFA Construção refazer com logo
+        <img src={logomobile.src} />
       </a>
 
       <ul className="navbar-links">

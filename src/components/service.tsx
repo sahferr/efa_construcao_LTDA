@@ -1,11 +1,13 @@
+import gestion from "../assets/gestion.png";
+import masonry from "../assets/masonry.png";
+import miracema from "../assets/miracema.jpg";
+import wood from "../assets/wood.png";
 import "../styles/service.css";
-
 const services = [
   {
     title: "Alvenaria",
-    desc: "Execução de estruturas em alvenaria com materiais de alta durabilidade e acabamento preciso.",
-    image:
-      "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=900&q=80",
+    desc: "Execução de alvenaria e revestimentos, abrangendo chapisco, emboço e reboco, com técnicas que asseguram solidez.",
+    image: masonry.src,
   },
   {
     title: "Acabamentos",
@@ -16,8 +18,7 @@ const services = [
   {
     title: "Carpintaria",
     desc: "Trabalhos em madeira com precisão técnica, desde estruturas até elementos decorativos.",
-    image:
-      "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=900&q=80",
+    image: wood.src,
   },
   {
     title: "Reformas",
@@ -28,14 +29,12 @@ const services = [
   {
     title: "Pedra Miracema",
     desc: "Aplicação especializada em pedra miracema para fachadas, muros e pisos externos.",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80",
+    image: miracema.src,
   },
   {
     title: "Suporte à Obra",
     desc: "Acompanhamento técnico, gestão de equipe e apoio operacional durante toda a obra.",
-    image:
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80",
+    image: gestion.src,
   },
 ];
 
