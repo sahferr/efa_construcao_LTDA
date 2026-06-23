@@ -1,13 +1,60 @@
+import alphaville from "../assets/alphaville.png";
+import altoLapa from "../assets/alto-lapa.png";
+import paulista from "../assets/paulista.png";
+import pinheiros from "../assets/pinheiros.png";
 import "../styles/portfolio.css";
 
 const works = [
-  { title: "Residência Alto da Lapa", type: "Obra Residencial", year: "2023" },
-  { title: "Condomínio Vila Madalena", type: "Empreendimento", year: "2022" },
-  { title: "Reforma Comercial Centro", type: "Reforma", year: "2023" },
-  { title: "Fachada Pedra Miracema", type: "Acabamento Externo", year: "2022" },
-  { title: "Residência Alphaville", type: "Obra Residencial", year: "2021" },
-  { title: "Escritório Pinheiros", type: "Reforma Comercial", year: "2023" },
+  {
+    title: "Residência Paulista",
+    type: "Obra Residencial",
+    year: "2026",
+    image: paulista.src,
+    size: "card-1",
+  },
+  {
+    title: "Escritório Pinheiros",
+    type: "Reforma Comercial",
+    year: "2025",
+    image: pinheiros.src,
+    size: "card-2",
+  },
+  {
+    title: "Residência Alto da Lapa",
+    type: "Obra Residencial",
+    year: "2025",
+    image: altoLapa.src,
+    size: "card-3",
+  },
+  {
+    title: "Residência Alphaville",
+    type: "Obra Residencial",
+    year: "2024",
+    image: alphaville.src,
+    size: "card-4",
+  },
 ];
+
+function PortfolioCard({
+  work,
+  useGridPosition = false,
+}: {
+  work: (typeof works)[number];
+  useGridPosition?: boolean;
+}) {
+  return (
+    <div
+      className={`portfolio-card ${useGridPosition ? work.size : ""}`}
+      style={{ backgroundImage: `url(${work.image})` }}
+    >
+      <div className="portfolio-info">
+        <span className="portfolio-type">{work.type}</span>
+        <h3 className="portfolio-name">{work.title}</h3>
+        <span className="portfolio-year">{work.year}</span>
+      </div>
+    </div>
+  );
+}
 
 export default function Portfolio() {
   return (
@@ -16,16 +63,20 @@ export default function Portfolio() {
         <p className="portfolio-eyebrow">Obras Realizadas</p>
         <h2 className="portfolio-title">Nosso Portfólio</h2>
       </div>
-      <div className="portfolio-grid">
-        {works.map((w) => (
-          <div key={w.title} className="portfolio-card">
-            <div className="portfolio-img-placeholder" />
-            <div className="portfolio-info">
-              <span className="portfolio-type">{w.type}</span>
-              <h3 className="portfolio-name">{w.title}</h3>
-              <span className="portfolio-year">{w.year}</span>
-            </div>
-          </div>
+
+      {/* Mobile */}
+      <div className="portfolio-mobile">
+        <div className="track">
+          {[...works, ...works].map((work, index) => (
+            <PortfolioCard key={`${work.title}-${index}`} work={work} />
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop */}
+      <div className="portfolio-desktop">
+        {works.map((work) => (
+          <PortfolioCard key={work.title} work={work} useGridPosition />
         ))}
       </div>
     </section>
