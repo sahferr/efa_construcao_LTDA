@@ -14,7 +14,6 @@
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 0.5px solid var(--color-gold-soft);
   box-sizing: border-box;
-  font-weight: bold;
 }
 
 .navbar-logo {
@@ -42,7 +41,6 @@
 }
 
 .navbar-link {
-  font-size: 13px;
   color: #5a4f3e;
   text-decoration: none;
   letter-spacing: 0.04em;
@@ -54,18 +52,19 @@
 }
 
 .navbar-cta {
-  font-size: 13px;
+  color: var(--color-gold);
 
-  color: var(--color-ink);
   text-decoration: none;
-  background-color: var(--color-gold);
-  padding: 10px;
-  border-radius: 4px;
+  /* background-color: var(--color-gold); */
+  padding-top: 10px;
+  padding-left: 5px;
+  /* border-radius: 4px; */
   letter-spacing: 0.06em;
   transition:
     background 0.15s,
     border-color 0.15s,
     color 0.15s;
+  border-left: var(--color-gold) 3px solid;
 }
 
 .navbar-cta:hover {
@@ -82,7 +81,7 @@
   height: 42px;
   background: var(--color-blue-soft);
   border: 0.5px solid var(--color-gold-soft);
-  border-radius: 999px;
+  border-radius: 99px;
   cursor: pointer;
   padding: 0;
   transition:
@@ -140,7 +139,6 @@
 }
 
 .navbar-mobile-link {
-  font-size: 15px;
   color: #5a4f3e;
   text-decoration: none;
   letter-spacing: 0.04em;

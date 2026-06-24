@@ -39,13 +39,17 @@ h3 {
   font-family: var(--font-title), Georgia, serif;
   font-feature-settings: "liga" 1;
 }
-
 a,
 button,
 input,
 select,
 textarea {
-  font-family: inherit;
+  font-family: inherit !important;
+}
+
+a {
+  font-size: 16px !important;
+  /* font-weight: bold !important; */
 }
 
 ::-webkit-scrollbar {

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import logomobile from "../assets/logo-rmbg.png";
+import logomobile from "../assets/logo_brown.png";
 import "../styles/navbar.css";
 
 const links = [

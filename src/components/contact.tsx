@@ -104,11 +104,25 @@ export default function Contact() {
         )}
       </div>
 
-      <div className="contact-footer">
-        <p className="contact-footer-text">
-          © 2024 EFA Construção LTDA — Todos os direitos reservados.
-        </p>
-      </div>
+      <footer className="contact-footer">
+        <div>
+          <span className="contact-footer-text">
+            <p>© 2020 EFA Construção LTDA</p>
+            <p>Todos os direitos reservados.</p>
+            <p>CNPJ: 25.284.125/0001-11</p>
+          </span>
+        </div>
+        <div>
+          <span className="contact-footer-text">
+            <p>Raquel Ferreira</p>
+            <p>raquel.efaconstrucao@gmail.com</p>
+          </span>
+          <span className="contact-footer-text">
+            <p>Antonio Miguel</p>
+            <p>antonio.efaconstrucao@gmail.com</p>
+          </span>
+        </div>
+      </footer>
     </section>
   );
 }

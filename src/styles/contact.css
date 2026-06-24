@@ -212,7 +212,7 @@
 .contact-footer-text {
   font-size: 12px;
   color: #9c8a6e;
-  margin: 0;
+  margin: 2px;
 }
 
 @media (min-width: 768px) {
