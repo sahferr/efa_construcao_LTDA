@@ -23,7 +23,7 @@ export default function Contact() {
       <div className="contact-body">
         <div className="contact-info">
           <p className="contact-info-text">
-            Entre em contato e nossa equipe retornará em até 24 horas com uma
+            Entre em contato e nossa equipe retornará em até 48 horas com uma
             proposta personalizada para o seu projeto.
           </p>
           <div className="contact-channels">
@@ -98,7 +98,7 @@ export default function Contact() {
           <div className="contact-success">
             <p className="contact-success-title">Mensagem enviada!</p>
             <p className="contact-success-text">
-              Retornaremos em até 24 horas.
+              Retornaremos em até 48 horas.
             </p>
           </div>
         )}
