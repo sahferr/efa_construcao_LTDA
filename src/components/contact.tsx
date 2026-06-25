@@ -107,9 +107,9 @@ export default function Contact() {
       <footer className="contact-footer">
         <div>
           <span className="contact-footer-text">
-            <p>© 2020 EFA Construção LTDA</p>
+            <p>© 2026 </p>
             <p>Todos os direitos reservados.</p>
-            <p>CNPJ: 25.284.125/0001-11</p>
+            <p>EFA Construção LTDA CNPJ: 25.284.125/0001-11</p>
           </span>
         </div>
         <div>

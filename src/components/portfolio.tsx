@@ -1,7 +1,11 @@
+"use client";
+
+import { useRef, useState } from "react";
 import alphaville from "../assets/alphaville.png";
 import altoLapa from "../assets/alto-lapa.png";
 import paulista from "../assets/paulista.png";
 import pinheiros from "../assets/pinheiros.png";
+
 import "../styles/portfolio.css";
 
 const works = [
@@ -57,6 +61,44 @@ function PortfolioCard({
 }
 
 export default function Portfolio() {
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  const [isDragging, setIsDragging] = useState(false);
+  const startX = useRef(0);
+  const currentTranslate = useRef(0);
+  const prevTranslate = useRef(0);
+
+  const startDrag = (e: React.MouseEvent<HTMLDivElement>) => {
+    setIsDragging(true);
+    startX.current = e.pageX;
+
+    if (trackRef.current) {
+      const style = window.getComputedStyle(trackRef.current);
+      const matrix = new DOMMatrix(style.transform);
+      prevTranslate.current = matrix.m41;
+    }
+  };
+
+  const onMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!isDragging || !trackRef.current) return;
+
+    e.preventDefault();
+
+    const currentX = e.pageX - startX.current;
+    const nextTranslate = prevTranslate.current + currentX;
+
+    currentTranslate.current = nextTranslate;
+
+    trackRef.current.style.animation = "none";
+    trackRef.current.style.transform = `translateX(${nextTranslate}px)`;
+  };
+
+  const stopDrag = () => {
+    setIsDragging(false);
+
+    prevTranslate.current = currentTranslate.current;
+  };
+
   return (
     <section className="portfolio" id="portfolio">
       <div className="portfolio-header">
@@ -66,7 +108,14 @@ export default function Portfolio() {
 
       {/* Mobile */}
       <div className="portfolio-mobile">
-        <div className="track">
+        <div
+          className="track"
+          ref={trackRef}
+          onMouseDown={startDrag}
+          onMouseMove={onMouseMove}
+          onMouseUp={stopDrag}
+          onMouseLeave={stopDrag}
+        >
           {[...works, ...works].map((work, index) => (
             <PortfolioCard key={`${work.title}-${index}`} work={work} />
           ))}
