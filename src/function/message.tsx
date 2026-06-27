@@ -1,4 +1,4 @@
-export function handleSubmit({
+export async function handleSubmit({
   name,
   phone,
   service,
@@ -9,13 +9,10 @@ export function handleSubmit({
   service: string;
   message: string;
 }) {
-  const text = `Olá! Gostaria de solicitar um orçamento.
-
-    *Nome:* ${name}
-    *WhatsApp:* ${phone}
-    *Serviço:* ${service}
-    *Mensagem:* ${message}`;
-
-  const url = `https://wa.me/5511965787716?text=${encodeURIComponent(text)}`;
-  window.open(url, "_blank");
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
+  await fetch(`${apiUrl}/contact`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name, phone, service, message }),
+  });
 }

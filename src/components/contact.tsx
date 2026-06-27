@@ -3,7 +3,6 @@ import { useState } from "react";
 import { formatName } from "../function/formatName";
 import { formatPhone } from "../function/formatPhone";
 import { handleSubmit } from "../function/message";
-
 import "../styles/contact.css";
 
 export default function Contact() {
@@ -12,6 +11,8 @@ export default function Contact() {
   const [name, setName] = useState("");
   const [service, setService] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   return (
     <section className="contact" id="contact">
@@ -67,7 +68,13 @@ export default function Contact() {
             </div>
             <div className="form-group">
               <label className="form-label">Tipo de serviço</label>
-              <select className="form-input">
+              <select
+                className="form-input"
+                value={service}
+                onChange={(e) => {
+                  setService(e.target.value);
+                }}
+              >
                 <option value="">Selecione...</option>
                 <option>Alvenaria</option>
                 <option>Acabamentos</option>
@@ -82,13 +89,22 @@ export default function Contact() {
               <textarea
                 className="form-input form-textarea"
                 placeholder="Descreva seu projeto..."
+                value={message}
+                onChange={(e) => {
+                  setMessage(e.target.value);
+                }}
               />
             </div>
+            {error && <p className="form-error">{error}</p>}
             <button
               className="form-submit"
-              onClick={() => {
-                setSent(true);
-                handleSubmit({ name, phone, service, message });
+              onClick={async () => {
+                try {
+                  await handleSubmit({ name, phone, service, message });
+                  setSent(true);
+                } catch {
+                  setError("error sending");
+                }
               }}
             >
               Enviar Solicitação
