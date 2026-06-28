@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
-import favicon from "../assets/logo-favicon.png";
+import favicon from "../assets/favicon.png";
 import "./globals.css";
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],

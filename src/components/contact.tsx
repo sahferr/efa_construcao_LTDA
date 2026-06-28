@@ -28,9 +28,9 @@ export default function Contact() {
             proposta personalizada para o seu projeto.
           </p>
           <div className="contact-channels">
-            <a href="https://wa.me/5511965787716" className="contact-channel">
+            <a href="https://wa.me/551143849101" className="contact-channel">
               <span className="contact-channel-label">WhatsApp</span>
-              <span className="contact-channel-value">(11) 96578-7716</span>
+              <span className="contact-channel-value">(11) 4384-9101</span>
             </a>
             <a
               href="mailto:raquel.efaconstrucao@gmail.com"
