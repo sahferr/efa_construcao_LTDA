@@ -43,11 +43,41 @@ export default function Contact() {
         </div>
 
         {!sent ? (
-          <div className="contact-form">
+          <form
+            className="contact-form"
+            onSubmit={async (e) => {
+              e.preventDefault();
+              if (!service) {
+                setError("Selecione o tipo de serviço");
+                return;
+              }
+              setLoading(true);
+              setError("");
+              try {
+                await handleSubmit({ name, phone, service, message });
+                setName("");
+                setPhone("");
+                setService("");
+                setMessage("");
+                setSent(true);
+              } catch (err) {
+                if (err instanceof TypeError) {
+                  setError("Erro de conexão. Tente novamente mais tarde.");
+                } else if (err instanceof Error) {
+                  setError(err.message);
+                } else {
+                  setError("Erro ao enviar. Tente novamente.");
+                }
+              } finally {
+                setLoading(false);
+              }
+            }}
+          >
             <div className="form-row">
               <div className="form-group">
                 <label className="form-label">Nome</label>
                 <input
+                  required
                   className="form-input"
                   type="text"
                   placeholder="Seu nome completo"
@@ -58,6 +88,7 @@ export default function Contact() {
               <div className="form-group">
                 <label className="form-label">WhatsApp</label>
                 <input
+                  required
                   className="form-input"
                   type="tel"
                   placeholder="(11) 99999-9999"
@@ -69,6 +100,7 @@ export default function Contact() {
             <div className="form-group">
               <label className="form-label">Tipo de serviço</label>
               <select
+                required
                 className="form-input"
                 value={service}
                 onChange={(e) => {
@@ -87,6 +119,7 @@ export default function Contact() {
             <div className="form-group">
               <label className="form-label">Mensagem</label>
               <textarea
+                required
                 className="form-input form-textarea"
                 placeholder="Descreva seu projeto..."
                 value={message}
@@ -96,49 +129,27 @@ export default function Contact() {
               />
             </div>
             {error && <p className="form-error">{error}</p>}
-            <button
-              className="form-submit"
-              onClick={async () => {
-                try {
-                  await handleSubmit({ name, phone, service, message });
-                  setSent(true);
-                } catch {
-                  setError("error sending");
-                }
-              }}
-            >
-              Enviar Solicitação
+            <button className="form-submit" type="submit" disabled={loading}>
+              {loading ? "Enviando..." : "Enviar Solicitação"}
             </button>
-          </div>
+          </form>
         ) : (
           <div className="contact-success">
-            <p className="contact-success-title">Mensagem enviada!</p>
+            <p className="contact-success-title">Solicitação enviada com sucesso!</p>
             <p className="contact-success-text">
-              Retornaremos em até 48 horas.
+              Recebemos seu pedido de orçamento. Nossa equipe entrará em contato
+              em até 48 horas.
             </p>
+            <button
+              className="form-submit"
+              style={{ marginTop: "16px", alignSelf: "center" }}
+              onClick={() => setSent(false)}
+            >
+              Enviar novo orçamento
+            </button>
           </div>
         )}
       </div>
-
-      <footer className="contact-footer">
-        <div>
-          <span className="contact-footer-text">
-            <p>© 2026 </p>
-            <p>Todos os direitos reservados.</p>
-            <p>EFA Construção LTDA CNPJ: 25.284.125/0001-11</p>
-          </span>
-        </div>
-        <div>
-          <span className="contact-footer-text">
-            <p>Raquel Ferreira</p>
-            <p>raquel.efaconstrucao@gmail.com</p>
-          </span>
-          <span className="contact-footer-text">
-            <p>Antonio Miguel</p>
-            <p>antonio.efaconstrucao@gmail.com</p>
-          </span>
-        </div>
-      </footer>
     </section>
   );
 }

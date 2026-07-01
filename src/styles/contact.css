@@ -215,6 +215,21 @@
   margin: 2px;
 }
 
+.contact-footer-credit {
+  margin-top: 16px;
+  opacity: 0.35;
+  transition: opacity 0.2s ease;
+}
+
+.contact-footer-credit:hover {
+  opacity: 0.7;
+}
+
+.contact-footer-credit img {
+  width: auto;
+  height: 42px;
+}
+
 @media (min-width: 768px) {
   .form-row {
     flex-direction: row;

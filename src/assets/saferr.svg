@@ -1,0 +1,32 @@
+<svg width="480" height="160" viewBox="0 0 480 160" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500&amp;display=swap');
+      .logo-text {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 60px;
+        font-weight: 300;
+        fill: #1a1a1a;
+        letter-spacing: -2px;
+      }
+      .logo-dot {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 62px;
+        font-weight: 500;
+        fill: #4F7FFF;
+        
+      }
+      .logo-sub {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size:26px;
+        font-weight: 300;
+        fill: #888888;
+        letter-spacing: 4px;
+      }
+    </style>
+  </defs>
+
+  <text x="240" y="90" text-anchor="middle" class="logo-text">saferr<tspan class="logo-dot">.</tspan></text>
+  <line x1="100" y1="108" x2="380" y2="108" stroke="#4F7FFF" stroke-width="1.4"/>
+  <text x="240" y="140" text-anchor="middle" class="logo-sub">dev. full stack</text>
+</svg>
